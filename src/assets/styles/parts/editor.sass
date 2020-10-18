@@ -1,0 +1,40 @@
+.editor
+  position: relative
+  display: flex
+  height: 100%
+  width: 100%
+  padding-top: $padding-xlarge
+  border: 1px solid #f5f5f5
+  border-width: 0 1px
+  overflow-y: auto
+  background-color: #f5f5f5
+  justify-content: center
+
+  &__main
+    position: relative
+    border-radius: 3px
+    position: relative
+    transform: scaleX(1)
+    background-color: #fff
+    transform-origin: center top
+    background-image: linear-gradient(45deg, #f5f5f5 25%, transparent 0, transparent 75%, #f5f5f5 0), linear-gradient(45deg, #f5f5f5 25%, transparent 0, transparent 75%, #f5f5f5 0)
+    background-position: 0 0, 13px 13px
+    background-size: 26px 26px
+    border: 1px solid $color-divider
+
+  &__layers
+    height: 100%
+    background-repeat: no-repeat
+    background-size: 100% auto !important
+
+  .layer
+    cursor: move
+    outline: 1px solid transparent
+
+    &:hover, &.active
+      outline: 1px solid #ff7b7b
+
+.layer
+  position: absolute
+  top: 0
+  left: 0

@@ -1,25 +1,22 @@
+import '~/assets/styles/index.sass';
+
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux'
+import store from './storage/store'
+import Editor from './pages/editor';
+import { Bar, LayersList } from '~/components/parts';
+import Preview from "~/pages/preview";
+import { UploadingNotification } from "~/components/popups";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Provider store={store}>
+          <UploadingNotification/>
+          <Preview/>
+          <Bar/>
+          <LayersList/>
+          <Editor/>
+      </Provider>
   );
 }
 
