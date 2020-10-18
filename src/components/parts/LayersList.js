@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { connect } from 'react-redux';
-import {toggleUploading, updateLayer} from '~/storage/actions';
+import {addLayer, toggleUploading, updateLayer} from '~/storage/actions';
 
 class LayersList extends React.Component {
     openFileDialog = () => {
@@ -61,4 +61,4 @@ const mapState = (state) => {
     };
 }
 
-export default connect(mapState, { updateLayer, toggleUploading })(LayersList);
+export default connect(mapState, { addLayer, updateLayer, toggleUploading })(LayersList);
